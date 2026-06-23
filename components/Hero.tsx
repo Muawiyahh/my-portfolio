@@ -1,11 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import CodeRain from "./CodeRain";
+import BrowserWindow from "./BrowserWindow";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
-      <CodeRain />
+    <section className="relative h-screen flex flex-col items-center md:items-start justify-center px-6 md:px-16 lg:px-24 text-center md:text-left overflow-hidden">
+      <BrowserWindow />
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
