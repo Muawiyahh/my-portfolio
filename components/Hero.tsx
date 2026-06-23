@@ -1,14 +1,17 @@
 "use client";
 import { motion } from "framer-motion";
+import CodeRain from "./CodeRain";
 
 export default function Hero() {
   return (
     <section className="relative h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+      <CodeRain />
+
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-[10px] tracking-[0.3em] uppercase text-muted mb-5 font-sans"
+        className="relative z-10 text-[10px] tracking-[0.3em] uppercase text-muted mb-5 font-sans"
       >
         Web Developer
       </motion.p>
@@ -17,7 +20,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.15 }}
-        className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-heading font-bold leading-none tracking-tight text-ink"
+        className="relative z-10 text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-heading font-bold leading-none tracking-tight text-ink"
       >
         Muawiyah
         <br />
@@ -28,7 +31,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-6 text-sm md:text-base text-muted font-sans tracking-widest uppercase"
+        className="relative z-10 mt-6 text-sm md:text-base text-muted font-sans tracking-widest uppercase"
       >
         Extensions · Websites · Web Apps
       </motion.p>
@@ -37,7 +40,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="relative z-10 absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-[9px] tracking-[0.3em] uppercase text-gold font-sans">
           Scroll
