@@ -29,7 +29,7 @@ export default function About() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
             className="md:max-w-md bg-cream/90 backdrop-blur-sm rounded-2xl p-8 md:p-10"
           >
             <p className="text-[10px] tracking-[0.3em] uppercase text-muted mb-3 font-sans">
