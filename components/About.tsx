@@ -3,8 +3,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "2+", label: "Extensions\nPublished" },
-  { value: "3+", label: "Websites\nBuilt" },
+  { value: "1", label: "Extension\nPublished" },
+  { value: "2+", label: "Websites\nBuilt" },
   { value: "1", label: "App\nLive" },
 ];
 

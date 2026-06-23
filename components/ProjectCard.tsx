@@ -7,6 +7,7 @@ interface Project {
   description: string;
   tags: string[];
   video?: string;
+  url?: string;
 }
 
 export default function ProjectCard({ project }: { project: Project }) {

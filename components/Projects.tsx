@@ -4,6 +4,14 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
+    name: "Acadewin",
+    description:
+      "Full website for an academic services business — designed, built, and deployed end-to-end.",
+    tags: ["Website", "Next.js", "Vercel"],
+    video: "/videos/acadewin.mp4",
+    url: "https://acadewin.com",
+  },
+  {
     name: "Hirerchy Autofill",
     description:
       "Chrome extension that fills job application forms instantly using saved client profiles. Published on the Chrome Web Store.",
@@ -13,9 +21,16 @@ const projects = [
   {
     name: "Hirerchy Portal",
     description:
-      "Client portal for managing profiles used in automated job applications, with role-based access control.",
+      "Client portal for managing applicant profiles with role-based access control, used alongside the Autofill extension.",
     tags: ["Web App", "Supabase", "Netlify"],
     video: "/videos/hirerchy-portal.mp4",
+  },
+  {
+    name: "Hirerchy Website",
+    description:
+      "Marketing website for Hirerchy, a job-finding agency — currently in development.",
+    tags: ["Website", "In Progress"],
+    video: "",
   },
 ];
 
