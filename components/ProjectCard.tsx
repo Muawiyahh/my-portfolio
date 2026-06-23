@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[9px] tracking-[0.2em] uppercase text-muted font-sans"
+              className="text-[9px] tracking-[0.2em] uppercase text-gold font-sans"
             >
               {tag}
             </span>

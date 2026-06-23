@@ -30,9 +30,9 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
-            className="md:max-w-md bg-cream/90 backdrop-blur-sm rounded-2xl p-8 md:p-10"
+            className="md:max-w-md bg-cream/95 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-gold/20"
           >
-            <p className="text-[10px] tracking-[0.3em] uppercase text-muted mb-3 font-sans">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3 font-sans">
               About
             </p>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-ink mb-4 leading-tight">
@@ -45,10 +45,10 @@ export default function About() {
               applications, and websites. I build fast, functional products from
               the ground up — from design to deployment.
             </p>
-            <div className="grid grid-cols-3 gap-4 border-t border-ink/10 pt-6">
+            <div className="grid grid-cols-3 gap-4 border-t border-gold/20 pt-6">
               {stats.map(({ value, label }) => (
                 <div key={label} className="text-center">
-                  <p className="text-2xl font-heading font-bold text-ink">
+                  <p className="text-2xl font-heading font-bold text-gold">
                     {value}
                   </p>
                   <p className="text-[9px] text-muted font-sans whitespace-pre-line leading-tight mt-1 tracking-widest uppercase">

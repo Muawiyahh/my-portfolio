@@ -17,7 +17,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-[10px] tracking-[0.3em] uppercase text-muted mb-4 font-sans"
+          className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4 font-sans"
         >
           Contact
         </motion.p>
@@ -46,7 +46,7 @@ export default function Contact() {
               href={href}
               target={href.startsWith("mailto") || href === "#" ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="text-xs tracking-[0.2em] uppercase font-sans text-ink border-b border-ink pb-0.5 hover:text-muted hover:border-muted transition-colors duration-200"
+              className="text-xs tracking-[0.2em] uppercase font-sans text-gold border-b border-gold pb-0.5 hover:text-ink hover:border-ink/40 transition-colors duration-200"
             >
               {label}
             </a>

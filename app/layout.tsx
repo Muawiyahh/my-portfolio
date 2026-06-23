@@ -23,7 +23,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="bg-cream text-ink antialiased">{children}</body>
+      <body className="bg-cream text-ink antialiased selection:bg-gold/30 selection:text-ink">{children}</body>
     </html>
   );
 }

@@ -41,7 +41,7 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-[10px] tracking-[0.3em] uppercase text-muted mb-3 font-sans"
+        className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3 font-sans"
       >
         Work
       </motion.p>
