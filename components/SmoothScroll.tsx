@@ -10,10 +10,9 @@ export default function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.035, // lower = longer, ultra-smooth glide that eases to a stop
-      smoothWheel: true,
+      smoothWheel: true, // desktop wheel = smooth momentum
       wheelMultiplier: 1.3,
-      touchMultiplier: 2,
-      syncTouch: true,
+      syncTouch: false, // mobile uses native scrolling (avoids touch lag/jank)
     });
 
     let rafId = 0;

@@ -42,7 +42,9 @@ export default function Services() {
               data-hover
               className="group grid grid-cols-1 md:grid-cols-[80px_1fr_1.2fr] gap-3 md:gap-10 items-start border-b border-line py-9 md:py-12 transition-colors hover:bg-surface/40"
             >
-              <span className="label text-muted pt-2">{s.n}</span>
+              <span className="label pt-2 bg-gradient-to-br from-accent to-accent2 bg-clip-text text-transparent">
+                {s.n}
+              </span>
               <h3 className="font-display font-bold text-2xl md:text-4xl text-ink tracking-tight">
                 {s.title}
               </h3>

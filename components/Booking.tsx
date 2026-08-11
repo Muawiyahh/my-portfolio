@@ -25,7 +25,7 @@ export default function Booking() {
           target="_blank"
           rel="noopener noreferrer"
           data-hover
-          className="inline-block mt-10 label bg-ink text-cream rounded-full px-8 py-4 hover:opacity-85 transition-opacity"
+          className="inline-block mt-10 label bg-gradient-to-r from-accent to-accent2 text-cream rounded-full px-8 py-4 hover:opacity-90 transition-opacity"
         >
           Book a call →
         </a>

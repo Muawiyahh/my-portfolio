@@ -1,4 +1,5 @@
 import Intro from "@/components/Intro";
+import ScrollProgress from "@/components/ScrollProgress";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import Grain from "@/components/Grain";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Intro />
+      <ScrollProgress />
       <SmoothScroll />
       <CustomCursor />
       <Grain />

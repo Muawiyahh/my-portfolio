@@ -6,7 +6,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden flex flex-col">
+    <section className="relative min-h-dvh overflow-hidden flex flex-col">
       {/* Smoky cloud-gradient background */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <motion.div
@@ -19,13 +19,13 @@ export default function Hero() {
           aria-hidden
           animate={{ x: [0, -45, 0], y: [0, 30, 0], opacity: [0.85, 0.55, 0.85] }}
           transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute right-[-6%] top-[18%] h-[52vw] w-[52vw] rounded-full bg-[radial-gradient(circle,rgba(214,209,194,0.17),transparent_62%)] blur-3xl"
+          className="absolute right-[-6%] top-[18%] h-[52vw] w-[52vw] rounded-full bg-[radial-gradient(circle,rgba(79,125,240,0.16),transparent_62%)] blur-3xl"
         />
         <motion.div
           aria-hidden
           animate={{ x: [0, 30, 0], opacity: [0.6, 0.9, 0.6] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute left-1/4 bottom-[-12%] h-[55vw] w-[55vw] rounded-full bg-[radial-gradient(circle,rgba(240,234,214,0.14),transparent_62%)] blur-3xl"
+          className="absolute left-1/4 bottom-[-12%] h-[55vw] w-[55vw] rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.15),transparent_62%)] blur-3xl"
         />
       </div>
 
@@ -38,7 +38,7 @@ export default function Hero() {
       >
         <a
           href="#booking"
-          className="label border border-line rounded-full px-5 py-2.5 text-ink hover:bg-ink hover:text-cream transition-colors duration-200"
+          className="label border border-line rounded-full px-5 py-2.5 text-ink hover:bg-gradient-to-r hover:from-accent hover:to-accent2 hover:text-cream hover:border-transparent transition-colors duration-200"
         >
           Book a call
         </a>
@@ -47,11 +47,16 @@ export default function Hero() {
             href="https://github.com/Muawiyahh"
             target="_blank"
             rel="noopener noreferrer"
-            className="label text-muted hover:text-ink transition-colors"
+            className="label text-muted hover:text-accent transition-colors"
           >
             GitHub
           </a>
-          <a href="#" className="label text-muted hover:text-ink transition-colors">
+          <a
+            href="https://www.linkedin.com/in/muawiyah-althaf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="label text-muted hover:text-accent transition-colors"
+          >
             LinkedIn
           </a>
         </div>
@@ -97,7 +102,7 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, -10, 0], rotate: [-1.5, 1.5, -1.5] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="h-32 w-32 md:h-44 md:w-44 rounded-3xl overflow-hidden border border-line shadow-2xl"
+              className="h-20 w-20 sm:h-28 sm:w-28 md:h-40 md:w-40 rounded-2xl md:rounded-3xl overflow-hidden border border-line shadow-2xl"
             >
               <Image
                 src="/memoji-bw.png"
@@ -121,8 +126,10 @@ export default function Hero() {
           className="text-sm md:text-base text-muted max-w-xs"
         >
           Full-stack developer building{" "}
-          <span className="text-ink">automations, extensions, web apps &amp; AI tools</span> —
-          currently available for work.
+          <span className="bg-gradient-to-r from-accent to-accent2 bg-clip-text text-transparent font-medium">
+            automations, extensions, web apps &amp; AI tools
+          </span>{" "}
+          — currently available for work.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 12 }}

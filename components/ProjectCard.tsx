@@ -45,7 +45,7 @@ export interface Project {
   name: string;
   description: string;
   tags: string[];
-  image: string;
+  image?: string;
   url?: string;
   live?: string;
   github?: string;
@@ -197,7 +197,8 @@ export default function ProjectCard({
 
   return (
     <Reveal>
-      <div className="rounded-3xl border border-line bg-surface overflow-hidden p-6 md:p-10">
+      <div className="glow-card rounded-3xl">
+      <div className="relative rounded-3xl border border-line bg-surface overflow-hidden p-6 md:p-10 transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_45px_-12px_rgba(79,125,240,0.35)]">
         <div
           className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center ${
             reverse ? "md:[&>*:first-child]:order-2" : ""
@@ -214,7 +215,7 @@ export default function ProjectCard({
             </p>
             <div className="flex flex-wrap gap-x-5 gap-y-2 pt-2">
               {project.tags.map((t) => (
-                <span key={t} className="label text-ink">
+                <span key={t} className="label text-accent">
                   {t}
                 </span>
               ))}
@@ -230,6 +231,7 @@ export default function ProjectCard({
             />
           </TiltCard>
         </div>
+      </div>
       </div>
     </Reveal>
   );

@@ -6,7 +6,7 @@ import { useState, type FormEvent } from "react";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id";
 
 const inputClass =
-  "w-full bg-surface border border-line rounded-lg px-4 py-3 text-sm font-sans text-ink placeholder:text-muted focus:outline-none focus:border-ink/40 transition-colors";
+  "w-full bg-surface border border-line rounded-lg px-4 py-3 text-sm font-sans text-ink placeholder:text-muted focus:outline-none focus:border-accent transition-colors";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -60,7 +60,7 @@ export default function ContactForm() {
         type="submit"
         disabled={status === "sending"}
         data-hover
-        className="label bg-ink text-cream rounded-full px-8 py-3.5 hover:opacity-85 transition-opacity disabled:opacity-50"
+        className="label bg-gradient-to-r from-accent to-accent2 text-cream rounded-full px-8 py-3.5 hover:opacity-90 transition-opacity disabled:opacity-50"
       >
         {status === "sending" ? "Sending..." : "Send message"}
       </button>

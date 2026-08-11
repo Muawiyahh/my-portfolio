@@ -15,8 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  // TODO: replace with your real deployed domain (used to make the share image URL absolute)
-  metadataBase: new URL("https://muawiyah-portfolio.up.railway.app"),
+  metadataBase: new URL("https://muawiyah.up.railway.app"),
   title: "Muawiyah Althaf — Full-Stack Developer",
   description:
     "Full-stack developer building automations, Chrome extensions, web apps, and AI-powered tools — from idea to live deployment.",
@@ -47,7 +46,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${archivo.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-cream text-ink antialiased font-sans selection:bg-ink selection:text-cream">
+      <body className="bg-cream text-ink antialiased font-sans selection:bg-accent selection:text-cream">
         {children}
       </body>
     </html>

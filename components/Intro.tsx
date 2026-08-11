@@ -9,7 +9,7 @@ export default function Intro() {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const t = setTimeout(() => setShow(false), 2400);
+    const t = setTimeout(() => setShow(false), 1750);
     return () => clearTimeout(t);
   }, []);
 
@@ -17,19 +17,20 @@ export default function Intro() {
     <AnimatePresence>
       {show && (
         <motion.div
+          style={{ willChange: "transform" }}
           className="fixed inset-0 z-[120] flex items-center justify-center bg-cream"
           exit={{ y: "-100%" }}
-          transition={{ duration: 0.85, ease: [0.76, 0, 0.24, 1] }}
+          transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         >
           <div className="text-center px-6">
             {words.map((w, i) => (
               <motion.span
                 key={w}
-                initial={{ opacity: 0, y: -44 }}
+                initial={{ opacity: 0, y: -40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.5,
-                  delay: 0.2 + i * 0.45,
+                  duration: 0.4,
+                  delay: 0.1 + i * 0.36,
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className="display block text-6xl md:text-8xl lg:text-9xl leading-[0.95] text-ink"

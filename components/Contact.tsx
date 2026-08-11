@@ -30,25 +30,30 @@ export default function Contact() {
             <div className="flex flex-col gap-4">
               <a
                 href="mailto:muawiyahalthaf@gmail.com"
-                className="label text-ink border-b border-line pb-3 hover:text-muted transition-colors w-fit"
+                className="label text-ink border-b border-line pb-3 hover:text-accent transition-colors w-fit"
               >
                 muawiyahalthaf@gmail.com
               </a>
               <a
                 href="#booking"
-                className="label text-ink border-b border-line pb-3 hover:text-muted transition-colors w-fit"
+                className="label text-ink border-b border-line pb-3 hover:text-accent transition-colors w-fit"
               >
                 Book a call
               </a>
               <div className="flex gap-6 pt-2">
-                <a href="#" className="label text-muted hover:text-ink transition-colors">
+                <a
+                  href="https://www.linkedin.com/in/muawiyah-althaf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="label text-muted hover:text-accent transition-colors"
+                >
                   LinkedIn
                 </a>
                 <a
                   href="https://github.com/Muawiyahh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label text-muted hover:text-ink transition-colors"
+                  className="label text-muted hover:text-accent transition-colors"
                 >
                   GitHub
                 </a>

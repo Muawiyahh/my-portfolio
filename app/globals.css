@@ -14,6 +14,8 @@
   --color-surface: #16161A;    /* project cards */
   --color-muted: #8A8578;      /* secondary text */
   --color-line: #2A2A2A;       /* borders */
+  --color-accent: #4F7DF0;     /* electric-blue accent */
+  --color-accent2: #8B5CF6;    /* violet — pairs with accent for gradients */
   --font-display: var(--font-archivo);
   --font-sans: var(--font-space-grotesk);
 }
@@ -21,6 +23,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  overflow-x: hidden; /* guard against accidental horizontal scroll on mobile */
 }
 
 /* Lenis smooth scroll */
@@ -66,5 +69,57 @@ html.lenis body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* --- Traveling accent glow that orbits each project card --- */
+@property --glow-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.glow-card {
+  position: relative;
+  border-radius: 1.5rem; /* matches rounded-3xl */
+}
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px; /* ring thickness */
+  background: conic-gradient(
+    from var(--glow-angle),
+    transparent 0deg,
+    rgba(79, 125, 240, 0) 12deg,
+    rgba(79, 125, 240, 0.95) 30deg,
+    rgba(139, 92, 246, 0.95) 44deg,
+    rgba(139, 92, 246, 0) 62deg,
+    transparent 360deg
+  );
+  /* show only the border ring, not the filled center */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  /* soft halo that follows the bright arc */
+  filter: drop-shadow(0 0 4px rgba(79, 125, 240, 0.7))
+    drop-shadow(0 0 10px rgba(139, 92, 246, 0.4));
+  pointer-events: none;
+  animation: glow-travel 5.5s linear infinite;
+}
+@keyframes glow-travel {
+  to {
+    --glow-angle: 360deg;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .glow-card::before {
+    animation: none;
   }
 }
