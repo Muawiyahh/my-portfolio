@@ -14,7 +14,7 @@ export default function Booking() {
         </h2>
       </Reveal>
       <Reveal delay={0.1}>
-        <p className="text-base md:text-lg text-muted max-w-xl mx-auto mt-6 leading-relaxed">
+        <p className="text-[17px] md:text-lg text-muted max-w-xl mx-auto mt-6 leading-relaxed">
           I help <span className="text-ink">founders</span>{" "}
           go from idea to launch —
           I build your product from scratch, end to end: automations, web apps &amp;

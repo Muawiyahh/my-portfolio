@@ -210,7 +210,7 @@ export default function ProjectCard({
             <h3 className="font-display font-bold text-3xl md:text-5xl text-ink tracking-tight">
               {project.name}
             </h3>
-            <p className="text-sm md:text-base text-muted leading-relaxed max-w-md">
+            <p className="text-base md:text-base text-muted leading-relaxed max-w-md">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-x-5 gap-y-2 pt-2">

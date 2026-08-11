@@ -6,7 +6,7 @@ import { useState, type FormEvent } from "react";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id";
 
 const inputClass =
-  "w-full bg-surface border border-line rounded-lg px-4 py-3 text-sm font-sans text-ink placeholder:text-muted focus:outline-none focus:border-accent transition-colors";
+  "w-full bg-surface border border-line rounded-lg px-4 py-3 text-base font-sans text-ink placeholder:text-muted focus:outline-none focus:border-accent transition-colors";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -36,7 +36,7 @@ export default function ContactForm() {
     return (
       <div className="rounded-2xl border border-line bg-surface p-8">
         <p className="font-display font-bold text-2xl text-ink mb-2">Thanks! 🎉</p>
-        <p className="text-sm text-muted leading-relaxed">
+        <p className="text-base text-muted leading-relaxed">
           Your message is on its way — I&apos;ll get back to you soon.
         </p>
       </div>
@@ -65,7 +65,7 @@ export default function ContactForm() {
         {status === "sending" ? "Sending..." : "Send message"}
       </button>
       {status === "error" && (
-        <p className="text-sm font-sans text-red-400">
+        <p className="text-[15px] font-sans text-red-400">
           Something went wrong — please email me directly at muawiyahalthaf@gmail.com.
         </p>
       )}

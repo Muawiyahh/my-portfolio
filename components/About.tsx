@@ -29,14 +29,14 @@ export default function About() {
         {/* Bio */}
         <div className="space-y-6">
           <Reveal delay={0.05}>
-            <p className="text-base md:text-lg text-ink leading-relaxed">
+            <p className="text-[17px] md:text-lg text-ink leading-relaxed">
               I&apos;m a full-stack developer specializing in automations, Chrome
               extensions, web applications, and AI-powered tools. I build complete
               products from the ground up — design, development, and deployment.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="text-base md:text-lg text-muted leading-relaxed">
+            <p className="text-[17px] md:text-lg text-muted leading-relaxed">
               Outside of code, I&apos;m usually gaming — either getting lost in a
               story-mode game on the PS5, or playing something competitive like
               Valorant or Counter-Strike. I like to stay active off-screen too: I
@@ -53,7 +53,7 @@ export default function About() {
             <Reveal key={group} delay={0.1 + i * 0.08}>
               <div className="border-t border-line pt-5">
                 <p className="label text-ink mb-3">{group}</p>
-                <p className="text-sm md:text-base text-muted leading-relaxed">
+                <p className="text-base md:text-base text-muted leading-relaxed">
                   {items}
                 </p>
               </div>

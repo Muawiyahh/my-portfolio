@@ -11,9 +11,13 @@ export default function ScrollProgress() {
   });
 
   return (
-    <motion.div
-      style={{ scaleX }}
-      className="fixed top-0 left-0 right-0 z-[110] h-[3px] origin-left bg-gradient-to-r from-accent to-accent2"
-    />
+    // Solid page-colored track so no content peeks through the top strip;
+    // the gradient fill scales inside it as you scroll.
+    <div className="fixed top-0 left-0 right-0 z-[110] h-[3px] bg-cream">
+      <motion.div
+        style={{ scaleX }}
+        className="h-full w-full origin-left bg-gradient-to-r from-accent to-accent2"
+      />
+    </div>
   );
 }

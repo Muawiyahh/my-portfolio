@@ -15,7 +15,7 @@ export default function Contact() {
         {/* Form */}
         <Reveal delay={0.1}>
           <div className="space-y-6">
-            <p className="text-base md:text-lg text-muted max-w-sm leading-relaxed">
+            <p className="text-[17px] md:text-lg text-muted max-w-sm leading-relaxed">
               Got a question, proposal, or project? Drop me a message and I&apos;ll
               get back to you.
             </p>

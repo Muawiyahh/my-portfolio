@@ -84,7 +84,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease }}
-            className="display text-[20vw] md:text-[13.5vw] lg:text-[11.5rem] leading-[0.92] text-ink"
+            className="display text-[15.5vw] md:text-[13.5vw] lg:text-[11.5rem] leading-[0.92] text-ink"
           >
             Muawiyah
             <br />
@@ -123,7 +123,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4, ease }}
-          className="text-sm md:text-base text-muted max-w-xs"
+          className="text-base md:text-lg text-muted max-w-xs"
         >
           Full-stack developer building{" "}
           <span className="bg-gradient-to-r from-accent to-accent2 bg-clip-text text-transparent font-medium">
@@ -135,7 +135,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease }}
-          className="text-sm md:text-base text-muted max-w-xs md:justify-self-end md:text-right"
+          className="text-base md:text-lg text-muted max-w-xs md:justify-self-end md:text-right"
         >
           Focused on clean, functional products — from idea to live deployment.
         </motion.p>
