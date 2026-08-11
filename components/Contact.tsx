@@ -4,14 +4,14 @@ import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
-    <section className="relative px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-10 overflow-hidden">
+    <section className="relative px-6 md:px-12 lg:px-20 pt-10 md:pt-20 pb-8 overflow-hidden">
       <Reveal>
-        <h2 className="display text-[18vw] md:text-[14vw] lg:text-[11rem] leading-[0.86] text-ink text-center md:text-left">
+        <h2 className="display text-[16vw] md:text-[14vw] lg:text-[11rem] leading-[0.9] text-ink text-center md:text-left">
           Let&apos;s Talk
         </h2>
       </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-10 md:gap-20 mt-10 md:mt-14">
+      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-8 md:gap-20 mt-6 md:mt-14">
         {/* Form */}
         <Reveal delay={0.1}>
           <div className="space-y-6">
@@ -63,7 +63,7 @@ export default function Contact() {
         </Reveal>
       </div>
 
-      <p className="label text-muted text-center md:text-left mt-12">
+      <p className="label text-muted text-center md:text-left mt-8">
         © {new Date().getFullYear()} Muawiyah Althaf
       </p>
     </section>

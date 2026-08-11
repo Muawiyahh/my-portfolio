@@ -63,7 +63,7 @@ export default function Hero() {
       </motion.nav>
 
       {/* Center: status pill + giant name */}
-      <div className="relative flex-1 flex flex-col items-center justify-center px-6 text-center">
+      <div className="relative flex-1 flex flex-col items-center justify-center px-6 text-center pb-[12vh] md:pb-0">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease }}
-            className="display text-[16vw] md:text-[13.5vw] lg:text-[11.5rem] leading-[0.92] text-ink"
+            className="display text-[17vw] md:text-[13.5vw] lg:text-[11.5rem] leading-[0.92] text-ink"
           >
             Muawiyah
             <br />
@@ -102,10 +102,10 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, -10, 0], rotate: [-1.5, 1.5, -1.5] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="h-20 w-20 sm:h-28 sm:w-28 md:h-40 md:w-40 rounded-2xl md:rounded-3xl overflow-hidden border border-line shadow-2xl"
+              className="h-16 w-16 sm:h-28 sm:w-28 md:h-40 md:w-40 rounded-2xl md:rounded-3xl overflow-hidden border border-line shadow-2xl"
             >
               <Image
-                src="/memoji-bw.png"
+                src="/memoji-color-v2.png"
                 alt="Muawiyah Althaf"
                 width={400}
                 height={400}

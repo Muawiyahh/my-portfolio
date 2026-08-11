@@ -37,10 +37,12 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="text-base md:text-lg text-muted leading-relaxed">
-              Outside of code, I&apos;m usually gaming — PS5, mostly Valorant and
-              Fortnite — or on a court or pitch. I play badminton and basketball,
-              but football is my main game: I captained my college team. Based in
-              Bangalore, working with clients worldwide.
+              Outside of code, I&apos;m usually gaming — either getting lost in a
+              story-mode game on the PS5, or playing something competitive like
+              Valorant or Counter-Strike. I like to stay active off-screen too: I
+              train in taekwondo — which has taken me to two international gold
+              medals — and football is my favourite sport to get out and play.
+              Based in Bangalore, working with clients worldwide.
             </p>
           </Reveal>
         </div>
