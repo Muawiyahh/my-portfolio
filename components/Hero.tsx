@@ -118,7 +118,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom intro lines */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 md:px-12 pb-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-6 px-6 md:px-12 pb-14">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
