@@ -1,63 +1,62 @@
 "use client";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 
-const stats = [
-  { value: "1", label: "Extension\nPublished" },
-  { value: "2+", label: "Websites\nBuilt" },
-  { value: "1", label: "App\nLive" },
+const tools = [
+  {
+    group: "Frontend",
+    items: "JavaScript, TypeScript, React, Next.js, Tailwind CSS, Framer Motion, HTML5, CSS3",
+  },
+  {
+    group: "Backend",
+    items: "Node.js, Supabase, PostgreSQL, REST APIs, Auth & role-based access, Stripe",
+  },
+  {
+    group: "AI & Tools",
+    items: "Claude / OpenAI APIs, Chrome Extensions (MV3), Git & GitHub, Vercel, Railway",
+  },
 ];
 
 export default function About() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Full-bleed background photo — add /public/photo.jpg to enable */}
-      <div className="absolute inset-0 bg-ink">
-        <Image
-          src="/photo.jpg"
-          alt="Muawiyah Althaf"
-          fill
-          className="object-cover object-center opacity-70"
-          sizes="100vw"
-        />
-      </div>
+    <section className="px-6 md:px-12 lg:px-20 py-28 md:py-44 max-w-6xl mx-auto w-full">
+      <Reveal>
+        <h2 className="display text-[9vw] md:text-[6.5vw] lg:text-7xl text-ink max-w-4xl">
+          I build automations, extensions, web apps &amp; AI.
+        </h2>
+      </Reveal>
 
-      {/* Panel */}
-      <div className="relative min-h-screen flex items-end md:items-center px-6 pt-32 pb-16 md:py-0">
-        <div className="max-w-6xl mx-auto w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
-            className="md:max-w-md bg-cream/95 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-gold/20"
-          >
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3 font-sans">
-              About
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-24 mt-16 md:mt-24">
+        {/* Bio */}
+        <div className="space-y-6">
+          <Reveal delay={0.05}>
+            <p className="text-base md:text-lg text-ink leading-relaxed">
+              I&apos;m a full-stack developer specializing in automations, Chrome
+              extensions, web applications, and AI-powered tools. I build complete
+              products from the ground up — design, development, and deployment.
             </p>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-ink mb-4 leading-tight">
-              Building things
-              <br />
-              that work.
-            </h2>
-            <p className="text-muted text-sm leading-relaxed mb-8 font-sans">
-              I&apos;m a web developer specializing in Chrome extensions, web
-              applications, and websites. I build fast, functional products from
-              the ground up — from design to deployment.
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="text-base md:text-lg text-muted leading-relaxed">
+              Outside of code, I&apos;m usually gaming — PS5, mostly Valorant and
+              Fortnite — or on a court or pitch. I play badminton and basketball,
+              but football is my main game: I captained my college team. Based in
+              Bangalore, working with clients worldwide.
             </p>
-            <div className="grid grid-cols-3 gap-4 border-t border-gold/20 pt-6">
-              {stats.map(({ value, label }) => (
-                <div key={label} className="text-center">
-                  <p className="text-2xl font-heading font-bold text-gold">
-                    {value}
-                  </p>
-                  <p className="text-[9px] text-muted font-sans whitespace-pre-line leading-tight mt-1 tracking-widest uppercase">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          </Reveal>
+        </div>
+
+        {/* Tools */}
+        <div className="space-y-10">
+          {tools.map(({ group, items }, i) => (
+            <Reveal key={group} delay={0.1 + i * 0.08}>
+              <div className="border-t border-line pt-5">
+                <p className="label text-ink mb-3">{group}</p>
+                <p className="text-sm md:text-base text-muted leading-relaxed">
+                  {items}
+                </p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

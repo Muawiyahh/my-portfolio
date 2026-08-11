@@ -8,20 +8,63 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-cream: #0D0D0D;
-  --color-card: #1A1A1A;
-  --color-ink: #F0EAD6;
-  --color-muted: #7A7060;
-  --color-gold: #C9A84C;
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-playfair);
-}
-
-html {
-  scroll-behavior: smooth;
+  /* dark + cream palette (no accent — contrast from type & space) */
+  --color-cream: #0D0D0D;      /* page bg (class name kept for continuity) */
+  --color-ink: #F0EAD6;        /* warm cream text */
+  --color-surface: #16161A;    /* project cards */
+  --color-muted: #8A8578;      /* secondary text */
+  --color-line: #2A2A2A;       /* borders */
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-space-grotesk);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Giant editorial display type */
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+/* Small technical labels */
+.label {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+}
+
+/* Hide the native cursor on desktop when the custom dot is active */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-none-desktop,
+  .cursor-none-desktop * {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

@@ -1,29 +1,55 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Archivo, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Muawiyah Althaf — Web Developer",
+  // TODO: replace with your real deployed domain (used to make the share image URL absolute)
+  metadataBase: new URL("https://muawiyah-portfolio.up.railway.app"),
+  title: "Muawiyah Althaf — Full-Stack Developer",
   description:
-    "Web developer specializing in Chrome extensions, web apps, and websites.",
+    "Full-stack developer building automations, Chrome extensions, web apps, and AI-powered tools — from idea to live deployment.",
+  openGraph: {
+    title: "Muawiyah Althaf — Full-Stack Developer",
+    description:
+      "Automations, Chrome extensions, web apps & AI tools — from idea to live deployment.",
+    type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Muawiyah Althaf — Full-Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muawiyah Althaf — Full-Stack Developer",
+    description: "Automations, Chrome extensions, web apps & AI tools.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="bg-cream text-ink antialiased selection:bg-gold/30 selection:text-ink">{children}</body>
+    <html lang="en" className={`${archivo.variable} ${spaceGrotesk.variable}`}>
+      <body className="bg-cream text-ink antialiased font-sans selection:bg-ink selection:text-cream">
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,68 +1,66 @@
 "use client";
-import { motion } from "framer-motion";
-
-const links = [
-  { label: "Email", href: "mailto:muawiyahalthaf@gmail.com" },
-  { label: "Fiverr", href: "#" }, // TODO: replace with your Fiverr profile URL
-  { label: "GitHub", href: "https://github.com/Muawiyahh" },
-  { label: "LinkedIn", href: "#" }, // TODO: replace with your LinkedIn profile URL
-];
+import Reveal from "./Reveal";
+import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
-    <section className="px-6 py-28 md:py-44 text-center">
-      <div className="max-w-3xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4 font-sans"
-        >
-          Contact
-        </motion.p>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-ink mb-12 leading-tight"
-        >
-          Let&apos;s work
-          <br />
-          together.
-        </motion.h2>
+    <section className="relative px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-10 overflow-hidden">
+      <Reveal>
+        <h2 className="display text-[18vw] md:text-[14vw] lg:text-[11rem] leading-[0.86] text-ink text-center md:text-left">
+          Let&apos;s Talk
+        </h2>
+      </Reveal>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-8"
-        >
-          {links.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith("mailto") || href === "#" ? undefined : "_blank"}
-              rel="noopener noreferrer"
-              className="text-xs tracking-[0.2em] uppercase font-sans text-gold border-b border-gold pb-0.5 hover:text-ink hover:border-ink/40 transition-colors duration-200"
-            >
-              {label}
-            </a>
-          ))}
-        </motion.div>
+      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-10 md:gap-20 mt-10 md:mt-14">
+        {/* Form */}
+        <Reveal delay={0.1}>
+          <div className="space-y-6">
+            <p className="text-base md:text-lg text-muted max-w-sm leading-relaxed">
+              Got a question, proposal, or project? Drop me a message and I&apos;ll
+              get back to you.
+            </p>
+            <ContactForm />
+          </div>
+        </Reveal>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-24 text-xs text-muted font-sans"
-        >
-          © {new Date().getFullYear()} Muawiyah Althaf
-        </motion.p>
+        {/* Direct links */}
+        <Reveal delay={0.15}>
+          <div className="space-y-6 md:pt-2">
+            <p className="label text-muted">Or reach me directly</p>
+            <div className="flex flex-col gap-4">
+              <a
+                href="mailto:muawiyahalthaf@gmail.com"
+                className="label text-ink border-b border-line pb-3 hover:text-muted transition-colors w-fit"
+              >
+                muawiyahalthaf@gmail.com
+              </a>
+              <a
+                href="#booking"
+                className="label text-ink border-b border-line pb-3 hover:text-muted transition-colors w-fit"
+              >
+                Book a call
+              </a>
+              <div className="flex gap-6 pt-2">
+                <a href="#" className="label text-muted hover:text-ink transition-colors">
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/Muawiyahh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="label text-muted hover:text-ink transition-colors"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </div>
+
+      <p className="label text-muted text-center md:text-left mt-12">
+        © {new Date().getFullYear()} Muawiyah Althaf
+      </p>
     </section>
   );
 }

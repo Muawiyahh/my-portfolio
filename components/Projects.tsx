@@ -1,88 +1,65 @@
 "use client";
-import { motion } from "framer-motion";
-import ProjectCard from "./ProjectCard";
+import Reveal from "./Reveal";
+import ProjectCard, { type Project } from "./ProjectCard";
 
-const projects = [
+const projects: Project[] = [
   {
-    name: "Acadewin",
+    name: "Hirerchy Extension",
     description:
-      "Full website for an academic services business — designed, built, and deployed end-to-end.",
-    tags: ["Website", "Next.js", "Vercel"],
-    video: "/videos/acadewin.mp4",
-    url: "https://acadewin.com",
+      "A published Chrome extension (Manifest V3) that autofills job application forms in one click across Workday, Greenhouse & iCIMS — with saved profiles, an admin panel, and a Supabase backend.",
+    tags: ["Chrome Extension", "TypeScript", "Supabase"],
+    image: "/projects/hirerchy-extension-v2.png",
+    url: "chromewebstore.google.com",
+    live: "https://chromewebstore.google.com/",
   },
   {
-    name: "Hirerchy Autofill",
+    name: "Hirerchy",
     description:
-      "Chrome extension that fills job application forms instantly using saved client profiles. Published on the Chrome Web Store.",
-    tags: ["Chrome Extension", "MV3", "Supabase"],
-    video: "/videos/hirerchy-autofill.mp4",
+      "A full SaaS platform for a job-application agency — a polished marketing site plus the web app behind it: three user roles (client, employee, admin), each with their own dashboard, a live application tracker synced to the Chrome extension, and built-in messaging. Designed and built end-to-end.",
+    tags: ["SaaS", "Next.js", "Supabase"],
+    image: "/projects/hirerchy-platform-v3.png",
+    url: "hirerchy.com",
   },
   {
-    name: "Hirerchy Portal",
+    name: "Dhanaya",
     description:
-      "Client portal for managing applicant profiles with role-based access control, used alongside the Autofill extension.",
-    tags: ["Web App", "Supabase", "Netlify"],
-    video: "/videos/hirerchy-portal.mp4",
+      "A data-driven profit-and-loss dashboard for a dropshipping business — rebuilt from raw sales data into a clean, interactive breakdown across products and platforms.",
+    tags: ["Data", "Dashboard", "Analytics"],
+    image: "/projects/dhanaya-dashboard-v2.png",
+    url: "dhanaya · dashboard",
   },
   {
-    name: "Hirerchy Website",
+    name: "FitStudio",
     description:
-      "Marketing website for Hirerchy, a job-finding agency — currently in development.",
-    tags: ["Website", "In Progress"],
-    video: "",
+      "A browser-based 3D virtual fitting room: a measurement-driven body model, chart-sized garments, product-image decals, and a fit heatmap — built with Three.js and React Three Fiber.",
+    tags: ["Three.js", "R3F", "3D / WebGL"],
+    image: "/projects/fitstudio-v2.png",
+    url: "fitstudio.app",
   },
 ];
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 32 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
 export default function Projects() {
   return (
-    <section className="px-6 py-24 md:py-36 max-w-6xl mx-auto w-full">
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3 font-sans"
-      >
-        Work
-      </motion.p>
-      <motion.h2
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="text-3xl md:text-5xl font-heading font-bold text-ink mb-16"
-      >
-        Selected Projects
-      </motion.h2>
+    <section className="px-6 md:px-12 lg:px-20 py-28 md:py-40 max-w-7xl mx-auto w-full">
+      <div className="text-center mb-20 md:mb-28">
+        <Reveal>
+          <h2 className="display text-[12vw] md:text-[8vw] lg:text-[6.5rem] text-ink">
+            My Projects
+          </h2>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="label text-muted max-w-xl mx-auto mt-6 !tracking-[0.15em] leading-relaxed">
+            From Chrome extensions to full-stack platforms and AI tools — every
+            build here solves a real-world problem with clean code.
+          </p>
+        </Reveal>
+      </div>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-80px" }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-      >
-        {projects.map((project) => (
-          <motion.div key={project.name} variants={item}>
-            <ProjectCard project={project} />
-          </motion.div>
+      <div className="space-y-10 md:space-y-16">
+        {projects.map((project, i) => (
+          <ProjectCard key={project.name} project={project} reverse={i % 2 === 1} />
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }
