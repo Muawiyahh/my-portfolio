@@ -84,7 +84,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease }}
-            className="display text-[17vw] md:text-[13.5vw] lg:text-[11.5rem] leading-[0.92] text-ink"
+            className="display text-[20vw] md:text-[13.5vw] lg:text-[11.5rem] leading-[0.92] text-ink"
           >
             Muawiyah
             <br />

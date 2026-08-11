@@ -10,13 +10,15 @@ export default function Booking() {
     <section id="booking" className="px-6 md:px-12 py-28 md:py-40 max-w-4xl mx-auto w-full text-center">
       <Reveal>
         <h2 className="display text-[10vw] md:text-[6vw] lg:text-7xl text-ink">
-          Let&apos;s build something.
+          Partner with me. Launch fast.
         </h2>
       </Reveal>
       <Reveal delay={0.1}>
         <p className="text-base md:text-lg text-muted max-w-xl mx-auto mt-6 leading-relaxed">
-          Have a project in mind? Book a free call and let&apos;s talk through what
-          you want to build — no pressure, just a conversation.
+          I help <span className="text-ink">founders</span>{" "}
+          go from idea to launch —
+          I build your product from scratch, end to end: automations, web apps &amp;
+          AI tools, shipped fast and ready to grow.
         </p>
       </Reveal>
       <Reveal delay={0.2}>

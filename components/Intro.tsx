@@ -33,7 +33,11 @@ export default function Intro() {
                   delay: 0.1 + i * 0.36,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="display block text-6xl md:text-8xl lg:text-9xl leading-[0.95] text-ink"
+                className={`display block text-6xl md:text-8xl lg:text-9xl leading-[0.95] ${
+                  i === words.length - 1
+                    ? "bg-gradient-to-r from-accent to-accent2 bg-clip-text text-transparent"
+                    : "text-ink"
+                }`}
               >
                 {w}
               </motion.span>

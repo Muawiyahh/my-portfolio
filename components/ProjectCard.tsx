@@ -169,14 +169,14 @@ export default function ProjectCard({
   reverse?: boolean;
 }) {
   const links = (
-    <div className="flex items-center gap-3">
+    <div className={`flex items-center gap-3 ${reverse ? "md:justify-end" : ""}`}>
       {project.github && (
         <a
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${project.name} on GitHub`}
-          className="h-11 w-11 rounded-full bg-ink text-cream flex items-center justify-center hover:opacity-80 transition-opacity"
+          className="h-11 w-11 rounded-full bg-gradient-to-br from-accent to-accent2 text-ink flex items-center justify-center hover:opacity-90 transition-opacity"
         >
           <GithubIcon />
         </a>
@@ -187,7 +187,7 @@ export default function ProjectCard({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${project.name} live`}
-          className="h-11 w-11 rounded-full bg-ink text-cream flex items-center justify-center hover:opacity-80 transition-opacity"
+          className="h-11 w-11 rounded-full bg-gradient-to-br from-accent to-accent2 text-ink flex items-center justify-center hover:opacity-90 transition-opacity"
         >
           <LinkIcon />
         </a>
