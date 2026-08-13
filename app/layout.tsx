@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://muawiyah.up.railway.app"),
+  metadataBase: new URL("https://muawiyahalthaf.com"),
   title: "Muawiyah Althaf — Full-Stack Developer",
   description:
     "Full-stack developer building automations, Chrome extensions, web apps, and AI-powered tools — from idea to live deployment.",
