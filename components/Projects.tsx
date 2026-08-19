@@ -6,16 +6,16 @@ const projects: Project[] = [
   {
     name: "Hirerchy Extension",
     description:
-      "Built for a job-application agency that was burning hours retyping the same details into every job form. I shipped a published Chrome extension (Manifest V3) that autofills applications in one click across Workday, Greenhouse & iCIMS — with saved profiles, an admin panel, and a Supabase backend.",
+      "A client project for Hirerchy, a job-application agency that was burning hours retyping the same details into every job form. I was brought on to build it: a published Chrome extension (Manifest V3) that autofills applications in one click across Workday, Greenhouse & iCIMS — with saved profiles, an admin panel, and a Supabase backend.",
     tags: ["Chrome Extension", "TypeScript", "Supabase"],
     image: "/projects/hirerchy-extension-v2.png",
     url: "chromewebstore.google.com",
     live: "https://chromewebstore.google.com/",
   },
   {
-    name: "Hirerchy",
+    name: "Hirerchy Platform",
     description:
-      "Built for the same agency as it scaled and needed to run the whole operation in one place. I designed and built an end-to-end SaaS platform — a polished marketing site plus the web app behind it: three roles (client, employee, admin) each with their own dashboard, a live application tracker synced to the extension, and built-in messaging.",
+      "A follow-on client project for the same agency as it scaled and needed to run its whole operation in one place. They engaged me to design and build their end-to-end SaaS platform — a polished marketing site plus the web app behind it: three roles (client, employee, admin) each with their own dashboard, a live application tracker synced to the extension, and built-in messaging.",
     tags: ["SaaS", "Next.js", "Supabase"],
     image: "/projects/hirerchy-platform-v3.png",
     url: "hirerchy.com",
