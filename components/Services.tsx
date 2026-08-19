@@ -33,7 +33,10 @@ export default function Services() {
   return (
     <section className="px-6 md:px-12 lg:px-20 py-28 md:py-40 max-w-6xl mx-auto w-full">
       <Reveal>
-        <p className="label text-muted mb-6">What I do</p>
+        <div className="flex items-center gap-3 mb-8">
+          <span className="h-[3px] w-10 rounded-full bg-gradient-to-r from-accent to-accent2" />
+          <p className="label !text-[0.82rem] text-ink">What I do</p>
+        </div>
       </Reveal>
       <div className="border-t border-line">
         {services.map((s, i) => (

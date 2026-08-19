@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { GithubIcon, LinkedinIcon } from "./icons";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -42,22 +43,26 @@ export default function Hero() {
         >
           Book a call
         </a>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-5 md:gap-6">
           <a
             href="https://github.com/Muawiyahh"
             target="_blank"
             rel="noopener noreferrer"
-            className="label text-muted hover:text-accent transition-colors"
+            aria-label="GitHub"
+            className="flex items-center gap-2 text-ink hover:text-accent transition-colors"
           >
-            GitHub
+            <GithubIcon className="h-[22px] w-[22px]" />
+            <span className="label hidden sm:inline">GitHub</span>
           </a>
           <a
             href="https://www.linkedin.com/in/muawiyah-althaf"
             target="_blank"
             rel="noopener noreferrer"
-            className="label text-muted hover:text-accent transition-colors"
+            aria-label="LinkedIn"
+            className="flex items-center gap-2 text-ink hover:text-accent transition-colors"
           >
-            LinkedIn
+            <LinkedinIcon className="h-[22px] w-[22px]" />
+            <span className="label hidden sm:inline">LinkedIn</span>
           </a>
         </div>
       </motion.nav>

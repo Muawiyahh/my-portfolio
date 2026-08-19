@@ -1,6 +1,7 @@
 "use client";
 import Reveal from "./Reveal";
 import ContactForm from "./ContactForm";
+import { GithubIcon, LinkedinIcon } from "./icons";
 
 export default function Contact() {
   return (
@@ -40,22 +41,24 @@ export default function Contact() {
               >
                 Book a call
               </a>
-              <div className="flex gap-6 pt-2">
+              <div className="flex flex-wrap gap-4 pt-3">
                 <a
                   href="https://www.linkedin.com/in/muawiyah-althaf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label text-muted hover:text-accent transition-colors"
+                  className="flex items-center gap-2.5 rounded-full border border-line px-5 py-2.5 text-ink hover:border-accent hover:text-accent transition-colors"
                 >
-                  LinkedIn
+                  <LinkedinIcon className="h-5 w-5" />
+                  <span className="label">LinkedIn</span>
                 </a>
                 <a
                   href="https://github.com/Muawiyahh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label text-muted hover:text-accent transition-colors"
+                  className="flex items-center gap-2.5 rounded-full border border-line px-5 py-2.5 text-ink hover:border-accent hover:text-accent transition-colors"
                 >
-                  GitHub
+                  <GithubIcon className="h-5 w-5" />
+                  <span className="label">GitHub</span>
                 </a>
               </div>
             </div>
