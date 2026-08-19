@@ -65,7 +65,7 @@ export default function ContactForm() {
         <h3 className="display text-4xl md:text-5xl text-ink">Message sent</h3>
         <p className="mt-4 max-w-sm text-[17px] text-muted leading-relaxed">
           Thanks for reaching out — it just landed in my inbox. I&apos;ll get
-          back to you soon, usually within a day.
+          back to you within a few hours.
         </p>
 
         <button
