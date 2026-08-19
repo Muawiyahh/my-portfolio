@@ -41,8 +41,9 @@ export default function About() {
               story-mode game on the PS5, or playing something competitive like
               Valorant or Counter-Strike. I like to stay active off-screen too: I
               train in taekwondo — which has taken me to two international gold
-              medals — and football is my favourite sport to get out and play.
-              Based in Bangalore, working with clients worldwide.
+              medals — and football is my favourite sport to get out and play, having
+              captained my school team for two years. Based in Bangalore, working
+              with clients worldwide.
             </p>
           </Reveal>
         </div>
