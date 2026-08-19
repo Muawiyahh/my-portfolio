@@ -1,9 +1,8 @@
 "use client";
 import { useState, type FormEvent } from "react";
 
-// TODO: create a free form at https://formspree.io, then paste your endpoint here
-// (looks like "https://formspree.io/f/abcdwxyz"). Until then, submissions won't send.
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id";
+// Formspree endpoint — submissions land in muawiyahalthaf@gmail.com.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdenpvrr";
 
 const inputClass =
   "w-full bg-surface border border-line rounded-lg px-4 py-3 text-base font-sans text-ink placeholder:text-muted focus:outline-none focus:border-accent transition-colors";
@@ -45,6 +44,15 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-4">
+      {/* Honeypot — hidden from people; bots that fill it are silently dropped by Formspree */}
+      <input
+        type="text"
+        name="_gotcha"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input name="name" required placeholder="Your name" className={inputClass} />
         <input name="email" type="email" required placeholder="Email address" className={inputClass} />
