@@ -24,7 +24,7 @@ const projects: Project[] = [
   {
     name: "Dhanaya",
     description:
-      "Built for a dropshipping business that couldn't tell which products and platforms were actually making money. I turned their raw sales data into a clean, interactive profit-and-loss dashboard that breaks down margins across every product and channel.",
+      "Built for an eCommerce business that couldn't tell which products and platforms were actually making money. I turned their raw sales data into a clean, interactive profit-and-loss dashboard that breaks down margins across every product and channel.",
     tags: ["Data", "Dashboard", "Analytics"],
     image: "/projects/dhanaya-dashboard-v2.png",
     url: "dhanaya · dashboard",
