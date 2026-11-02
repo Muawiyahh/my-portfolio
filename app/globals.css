@@ -123,3 +123,152 @@ html.lenis body {
     animation: none;
   }
 }
+
+/* ===================================================================
+   Lead gen pages (/tree-service-websites, later /tree-surgeon-websites)
+   Light, high-contrast palette: easy to read on a phone outdoors.
+   Scoped with lp-* tokens so the dark portfolio is untouched.
+   =================================================================== */
+@theme inline {
+  --color-lp-paper: #f5f2eb;
+  --color-lp-surface: #ffffff;
+  --color-lp-ink: #14161a;
+  --color-lp-muted: #5a5f57;
+  --color-lp-line: #e3ded2;
+  --color-lp-accent: #2b55d9;
+  --color-lp-accent-hover: #2347b8;
+  --color-lp-accent-soft: #e6ecfc;
+  --color-lp-night: #14161a;
+  --color-lp-night-2: #1d2026;
+  --color-lp-night-muted: #b9bdb4;
+  --color-lp-night-line: #2c3038;
+  --color-lp-sky: #8fa8f5;
+  --color-lp-missed: #c9372c;
+  --color-lp-ok: #15803d;
+}
+
+/* The price card's button glides back up to the form. */
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.lp-root) {
+    scroll-behavior: smooth;
+  }
+}
+
+/* The root layout paints the body dark; lead pages repaint it so iOS overscroll matches. */
+body:has(.lp-root) {
+  background: var(--color-lp-paper);
+  color: var(--color-lp-ink);
+}
+
+@layer components {
+  .lp-h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+  .lp-h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+  .lp-eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.78rem;
+  }
+  .lp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3.5rem;
+    padding: 0 1.6rem;
+    border-radius: 0.9rem;
+    font-weight: 600;
+    font-size: 1.06rem;
+    line-height: 1.2;
+    text-align: center;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+  .lp-btn:active {
+    transform: scale(0.98);
+  }
+  .lp-btn:focus-visible,
+  .lp-focus:focus-visible {
+    outline: 3px solid var(--color-lp-accent);
+    outline-offset: 3px;
+  }
+  .lp-btn-primary {
+    background: var(--color-lp-accent);
+    color: #fff;
+  }
+  .lp-btn-primary:hover {
+    background: var(--color-lp-accent-hover);
+  }
+  .lp-btn-primary:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  .lp-btn-ghost {
+    border: 1.5px solid var(--color-lp-line);
+    background: var(--color-lp-surface);
+    color: var(--color-lp-ink);
+  }
+  .lp-btn-ghost:hover {
+    border-color: var(--color-lp-ink);
+  }
+  .lp-field {
+    width: 100%;
+    min-height: 3.25rem;
+    border-radius: 0.75rem;
+    border: 1.5px solid var(--color-lp-line);
+    background: var(--color-lp-surface);
+    padding: 0.7rem 0.95rem;
+    font-size: 1.0625rem; /* ≥16px: stops iOS zooming into fields */
+    color: var(--color-lp-ink);
+    transition: border-color 160ms ease;
+  }
+  .lp-field::placeholder {
+    color: #8b8f86;
+  }
+  .lp-field:focus {
+    outline: none;
+    border-color: var(--color-lp-accent);
+    box-shadow: 0 0 0 3px var(--color-lp-accent-soft);
+  }
+  .lp-field[aria-invalid="true"] {
+    border-color: var(--color-lp-missed);
+  }
+  .lp-faq summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .lp-faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .lp-faq[open] .lp-faq-icon {
+    transform: rotate(45deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-root *,
+  .lp-root *::before,
+  .lp-root *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

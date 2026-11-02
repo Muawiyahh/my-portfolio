@@ -1,9 +1,7 @@
 "use client";
 import Reveal from "./Reveal";
 
-// TODO: replace with your real Cal.com link once you create a free account,
-// e.g. "https://cal.com/muawiyah/30min". Until then this points to cal.com.
-const CAL_LINK = "https://cal.com/";
+const CAL_LINK = "https://cal.com/muawiyah.althaf";
 
 export default function Booking() {
   return (
