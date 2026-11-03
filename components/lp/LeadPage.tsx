@@ -84,7 +84,6 @@ export default function LeadPage({ c, layout = 3 }: { c: LeadPageContent; layout
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-[0.85rem] text-lp-night-muted">{c.pricing.extra}</p>
           <p className="mt-4 border-t border-lp-night-line pt-4 text-[0.92rem] font-semibold text-lp-sky">{c.pricing.timeline}</p>
           <a href="#get" className="lp-btn lp-btn-primary mt-4 w-full !min-h-12 !text-[1rem]">
             {c.pricing.cta} <ArrowUp className="h-4 w-4" aria-hidden />

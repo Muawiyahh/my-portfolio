@@ -32,7 +32,6 @@ export type LeadPageContent = {
     price: string;
     cadence: string;
     items: string[];
-    extra: string;
     timeline: string;
     cta: string;
   };

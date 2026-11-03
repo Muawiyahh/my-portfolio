@@ -49,7 +49,6 @@ export const ukContent: LeadPageContent = {
       "Google Business Profile setup",
       "Your domain connected, with secure hosting set up",
     ],
-    extra: "Privacy policy page included free (it doesn't count towards your 10).",
     timeline: "Live in about a week",
     cta: "Get my website",
   },
