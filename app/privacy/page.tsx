@@ -1,6 +1,6 @@
-import Link from "next/link";
+import { Suspense } from "react";
 import type { Metadata } from "next";
-import { ArrowLeft } from "lucide-react";
+import PrivacyBackLink, { PrivacyBackLinkPlaceholder } from "@/components/lp/PrivacyBackLink";
 
 export const metadata: Metadata = {
   title: "Privacy policy | Muawiyah Althaf",
@@ -63,9 +63,9 @@ export default function PrivacyPage() {
   return (
     <div className="lp-root min-h-dvh bg-lp-paper font-sans text-lp-ink antialiased">
       <main className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6 lg:py-20">
-        <Link href="/" className="inline-flex min-h-11 items-center gap-1.5 font-semibold text-lp-accent">
-          <ArrowLeft className="h-4 w-4" aria-hidden /> muawiyahalthaf.com
-        </Link>
+        <Suspense fallback={<PrivacyBackLinkPlaceholder />}>
+          <PrivacyBackLink />
+        </Suspense>
         <h1 className="lp-h1 mt-6 text-[2.5rem] sm:text-6xl">Privacy policy</h1>
         <p className="mt-4 text-lp-muted">Last updated: {updated}</p>
         {sections.map((s) => (

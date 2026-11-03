@@ -4,6 +4,7 @@ import { ArrowUp, Check } from "lucide-react";
 import type { Layout, LeadPageContent } from "@/lib/lp/types";
 import LeadForm from "./LeadForm";
 import CookieSettingsButton from "./CookieSettingsButton";
+import { privacyHref } from "@/lib/lp/routes";
 
 /**
  * Hormozi-style lead page: logo → headline → subheadline → image → one field → button → three bullets.
@@ -92,7 +93,7 @@ export default function LeadPage({ c, layout = 3 }: { c: LeadPageContent; layout
       </section>
 
       <p className="mt-auto flex justify-center gap-5 pt-12 text-[0.85rem] text-lp-muted">
-        <Link href="/privacy" className="hover:text-lp-ink">
+        <Link href={privacyHref(c.market)} className="hover:text-lp-ink">
           Privacy policy
         </Link>
         {c.consent && <CookieSettingsButton label={c.consent.settings} />}

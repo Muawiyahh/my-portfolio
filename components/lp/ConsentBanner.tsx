@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getConsent, OPEN_EVENT, setConsent } from "@/lib/lp/consent";
+import { privacyHref } from "@/lib/lp/routes";
 
 /**
  * UK cookie banner. Accept and Reject are equally easy (ICO guidance); nothing tracks until Accept.
@@ -36,7 +37,7 @@ export default function ConsentBanner({ text, accept, reject }: { text: string; 
       <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-2xl border border-lp-line bg-lp-surface p-5 shadow-[0_20px_60px_-20px_rgba(20,22,26,0.45)] sm:flex-row sm:items-center">
         <p className="flex-1 text-[0.98rem] leading-relaxed text-lp-ink">
           {text}{" "}
-          <Link href="/privacy" className="font-semibold text-lp-accent underline underline-offset-2">
+          <Link href={privacyHref("uk")} className="font-semibold text-lp-accent underline underline-offset-2">
             Privacy policy
           </Link>
         </p>

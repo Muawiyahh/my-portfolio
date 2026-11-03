@@ -1,9 +1,10 @@
 import type { LeadPageContent } from "./types";
+import { LP_ROUTES } from "./routes";
 
 /** UK lead page: tree surgeons. "Quote", "mobile", £, British spelling. */
 export const ukContent: LeadPageContent = {
   market: "uk",
-  basePath: "/tree-surgeon-websites",
+  basePath: LP_ROUTES.uk,
   formLabel: "Tree surgeon websites (UK)",
 
   meta: {
