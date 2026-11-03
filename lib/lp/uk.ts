@@ -40,6 +40,7 @@ export const ukContent: LeadPageContent = {
     price: "£299",
     cadence: "one-off",
     items: [
+      "60-minute consultation call to understand your business",
       "10-page website designed for your tree surgery business",
       "A page for each service and the areas you cover, set up for Google",
       "Built for mobiles, with tap-to-call on every page",

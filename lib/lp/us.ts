@@ -40,6 +40,7 @@ export const usContent: LeadPageContent = {
     price: "$399",
     cadence: "one-time",
     items: [
+      "60-minute consultation call to understand your business",
       "10-page website designed for your tree service",
       "A page for each service and the towns you cover, set up for Google",
       "Built for phones, with tap-to-call on every page",
