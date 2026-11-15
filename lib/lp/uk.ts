@@ -20,7 +20,7 @@ export const ukContent: LeadPageContent = {
     desktop: "/lp/uk-demo-desktop-v2.png",
     mobile: "/lp/uk-demo-mobile-v2.png",
     alt: "A tree surgery website shown on a computer and a mobile",
-    caption: "Example: a demo site for a made-up firm.",
+    caption: "Example: a demo site for a made-up firm. Photo: Theblaynster, Wikimedia Commons, CC BY-SA 4.0.",
   },
   field: {
     label: "Where should I reach you?",
@@ -28,7 +28,7 @@ export const ukContent: LeadPageContent = {
     error: "Please enter a valid email address or mobile number.",
   },
   button: "Get my website",
-  note: "I'll be in touch within 1 working day. Nothing to pay today.",
+  note: "I'll be in touch within 1 working day. You'll see a free preview of your homepage before you pay anything.",
   bullets: [
     "10 pages built for tree work: home, every service, about, free quote and more",
     "Quote requests with photos land on your mobile, and every customer gets an instant reply",
@@ -41,6 +41,7 @@ export const ukContent: LeadPageContent = {
     cadence: "one-off",
     items: [
       "60-minute consultation call to understand your business",
+      "A free preview of your homepage before you pay anything",
       "10-page website designed for your tree surgery business",
       "A page for each service and the areas you cover, set up for Google",
       "Built for mobiles, with tap-to-call on every page",
@@ -56,7 +57,9 @@ export const ukContent: LeadPageContent = {
   },
   success: {
     title: "Got it!",
-    text: "I'll be in touch within 1 working day to get your website started.",
+    text: "I'll be in touch within 1 working day to start your free homepage preview.",
+    bookPrompt: "Rather not wait? Pick a time for a quick 15-minute call.",
+    bookCta: "Book a call",
   },
   sendError: "Sorry, that didn't send. Please try again, or email me at muawiyahalthaf@gmail.com.",
 

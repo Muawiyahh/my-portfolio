@@ -35,7 +35,8 @@ export type LeadPageContent = {
     timeline: string;
     cta: string;
   };
-  success: { title: string; text: string };
+  /** Shown in place of the form once it's sent, with an optional jump straight to booking a call. */
+  success: { title: string; text: string; bookPrompt: string; bookCta: string };
   sendError: string;
   /** UK only: the Pixel and Conversions API wait for cookie consent (PECR / UK GDPR). */
   consent?: { text: string; accept: string; reject: string; settings: string };

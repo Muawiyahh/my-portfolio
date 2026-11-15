@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { ArrowRight, CircleCheck, LoaderCircle } from "lucide-react";
+import { ArrowRight, CalendarDays, CircleCheck, LoaderCircle } from "lucide-react";
 import type { LeadPageContent } from "@/lib/lp/types";
+import { BOOKING_URL } from "@/lib/lp/routes";
 import { readUtm, rememberUtm, trackLead } from "@/lib/lp/track";
 
 // Leads land in Muawiyah's inbox via Formspree (same account as the portfolio contact form).
@@ -24,6 +25,7 @@ export default function LeadForm({ c }: { c: LeadPageContent }) {
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [state, setState] = useState<"idle" | "sending" | "sent" | "failed">("idle");
+  const [sentEmail, setSentEmail] = useState<string>();
   const doneRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => rememberUtm(), []);
@@ -52,6 +54,7 @@ export default function LeadForm({ c }: { c: LeadPageContent }) {
       const res = await fetch(ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } });
       if (!res.ok) throw new Error(String(res.status));
       trackLead(contact, { market: c.market, content: c.formLabel });
+      setSentEmail(contact.email);
       setState("sent");
     } catch {
       setState("failed");
@@ -59,6 +62,8 @@ export default function LeadForm({ c }: { c: LeadPageContent }) {
   }
 
   if (state === "sent") {
+    // Cal.com pre-fills the booking form from ?email=, so they don't type it twice.
+    const bookHref = sentEmail ? `${BOOKING_URL}?email=${encodeURIComponent(sentEmail)}` : BOOKING_URL;
     return (
       <div
         ref={doneRef}
@@ -69,6 +74,17 @@ export default function LeadForm({ c }: { c: LeadPageContent }) {
         <CircleCheck className="mx-auto h-10 w-10 text-lp-ok" aria-hidden />
         <p className="mt-3 text-[1.35rem] font-bold">{c.success.title}</p>
         <p className="mt-1 text-[1.05rem] text-lp-muted">{c.success.text}</p>
+        <div className="mt-5 border-t border-lp-ok/20 pt-5">
+          <p className="text-[1rem] font-medium">{c.success.bookPrompt}</p>
+          <a
+            href={bookHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="lp-btn lp-btn-primary mt-3 w-full !min-h-14 !text-[1.05rem]"
+          >
+            <CalendarDays className="h-5 w-5" aria-hidden /> {c.success.bookCta}
+          </a>
+        </div>
       </div>
     );
   }
